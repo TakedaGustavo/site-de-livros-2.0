@@ -9,4 +9,22 @@ header nav{
 .rodape{
 	background-color: black;
 	color:white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px;
+}
+
+body h1{
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+
+@media(max-width: 600px){
+	.produtos img{
+		width: 50%;
+	}
+
+	.produtos p{
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 30px;
+	}
 }
