@@ -1,17 +1,3 @@
-function maskCpf(){
-    let cpf = document.getElementById("tCpf").value, mascara =  "";
-    for(let x = 0; x < cpf.length; x++){
-        mascara += cpf.charAt(x);
-        if(x == 2 || x == 5){
-            mascara += ".";
-        }else if(x == 8){
-            mascara += "-";
-        }
-
-    }
-    document.getElementById("tCpf").value = mascara;
-}
-
 function espacoBranco(objeto){
     var maskNome = /^[A-z]/;
     if(maskNome.test(objeto.value)){
@@ -20,24 +6,31 @@ function espacoBranco(objeto){
     alert("Campo em Branco")
     return false;
 }
-//includes obriga o usuario ter que colocar o @fatectq.edu.br
 function formatoEmail(objeto){
-    if(objeto.value.includes("@fatectq.edu.br")){
+    if(objeto.value.includes("@EMail.com")){
         return true;
     }
     alert("Aluno Nao pertencente a Fatec Taquaritinga");
     return false;
 }
 
-
-function formatoCpf(objeto){
-    let maskCpf = /^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}$/;
-    if(maskCpf.test(objeto.value)){
-        return true;
-    }
-    alert("numero inválido")
-    return false;
+function convMaiusculo() {
+    let nome = document.getElementById("tNome").value;
+    document.getElementById("tNome").value = nome.toUpperCase();
 }
+
+function cpf() {
+    let tCpf = document.getElementById("tCpf").value, cpfNovo = "";
+    for (let x = 0; x <= tCpf.length  ; x++) {
+        cpfNovo += tCpf.charAt(x);
+        if (x == 2 || x == 5) {
+            cpfNovo += ".";
+        } else if (x == 8) {
+            cpfNovo += "-";
+        }
+    }
+    document.getElementById("tCpf").value = cpfNovo;
+} 
 
 function validar(){
     let n = document.getElementById("tNome");

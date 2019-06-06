@@ -1,10 +1,16 @@
-header nav{
-	background-color: black;
+.title-header{
+	background-color: rgb(127, 218, 230);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #fff;
+	margin: 0;
+	padding: 0;
 }
-
-.produtos img{
-	width: 100%;
-}
+ body{
+	 background-color: rgb(232, 237, 240);
+	 margin: 0;
+	 padding: 0;
+ }
 
 .rodape{
 	background-color: black;
@@ -18,6 +24,30 @@ body h1{
 	text-align: center;
 }
 
+.rodape{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    background: rgb(70, 55, 209);
+    padding: 1px;
+}
+
+.rodape p{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	color: #fff;
+	margin-top: 10px;
+}
+
+.formulario{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 2em;
+  }
+
+
 @media(max-width: 600px){
 	.produtos img{
 		width: 50%;
@@ -28,3 +58,4 @@ body h1{
 		font-size: 30px;
 	}
 }
+
