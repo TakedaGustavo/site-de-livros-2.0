@@ -1,23 +1,38 @@
-function espacoBranco(objeto){
-    var maskNome = /^[A-z]/;
-    if(maskNome.test(objeto.value)){
+function espacoBranco(objeto) {
+    let maskNome = /^[A-z]/;
+    if (maskNome.test(objeto.value)) {
         return true;
     }
-    alert("Campo em Branco")
-    return false;
-}
-function formatoEmail(objeto){
-    if(objeto.value.includes("@EMail.com")){
-        return true;
-    }
-    alert("Aluno Nao pertencente a Fatec Taquaritinga");
+    alert("Preencha o campo do nome corretamente");
     return false;
 }
 
-function convMaiusculo() {
-    let nome = document.getElementById("tNome").value;
-    document.getElementById("tNome").value = nome.toUpperCase();
+function formatoEmail(objeto) {
+    if (objeto.value.includes("@gmail.com")) {
+        return true;
+    }
+    alert("Formato de E-mail incompativel")
+    return false;
 }
+
+$(document).ready(
+    function(){
+        $("form").submit(
+            function(){
+                $("form").append("<p id = 'formato'> </p>");
+                let objeto = {
+                    "nome" : $("#tNome").val(),
+                    "Email" : $("#tEmail").val(),
+                    "Cpf" : $("#tCpf").val()
+                    // "nome": $('#tNome').val(),  
+                };
+                let html = JSON.stringify(objeto, 0, 4);
+                $("#formato").text(html);
+                return false;
+            }
+        );
+    }
+)
 
 function cpf() {
     let tCpf = document.getElementById("tCpf").value, cpfNovo = "";
@@ -32,17 +47,20 @@ function cpf() {
     document.getElementById("tCpf").value = cpfNovo;
 } 
 
-function validar(){
+
+function validar() {
     let n = document.getElementById("tNome");
     let e = document.getElementById("tEmail");
-    let c = document.getElementById("tCpf")
-    if(espacoBranco(n) != true){
-        return false;
-    }else if(formatoEmail(e) != true){
-        return false;
-    }else if(formatoEmail(e) != true){
-        return false;
-    }else if(formatoCpf(c) != true){
-        return false
+    let t = document.getElementById("tCpf");
+    let armazena = "";
+    if (espacoBranco(n) != true) {
+        armazena += false;
+    } else if (espacoBranco(e) != true) {
+        armazena += false;
+    } else if (formatoEmail(e) != true) {
+        armazena += false;
+    } else if (formatoCpf(t) != true) {
+        armazena += false;
     }
+    return armazena;
 }
