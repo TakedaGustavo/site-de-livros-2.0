@@ -19,6 +19,7 @@
 	font-size: 30px;
 }
 
+
 body h1{
 	font-family: Arial, Helvetica, sans-serif;
 	text-align: center;
@@ -28,7 +29,7 @@ body h1{
     width: 100%;
     height: auto;
     margin: auto;
-    background: rgb(70, 55, 209);
+    background-color: rgb(70, 55, 209);
     padding: 1px;
 }
 
@@ -48,11 +49,7 @@ body h1{
   }
 
 
-@media(max-width: 600px){
-	.produtos img{
-		width: 50%;
-	}
-
+@media(max-width: 575px){
 	.produtos p{
 		font-family: Arial, Helvetica, sans-serif;
 		font-size: 30px;
